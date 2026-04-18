@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NETLIFY_NEXT_SKEW_PROTECTION = "true"
+
+[dev]
+  command = "npm run dev"
+  targetPort = 3000
+  publish = ".next"
+  autoLaunch = false
