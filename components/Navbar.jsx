@@ -55,7 +55,7 @@ export default function Navbar() {
                   Manav
                 </p>
                 <p className="truncate text-sm text-white/86 transition duration-300 group-hover:text-white">
-                  Design and development studio
+                  Client websites and custom builds
                 </p>
               </div>
             </Link>
@@ -86,10 +86,10 @@ export default function Navbar() {
                 href="/#process"
                 className="px-3 py-2 text-sm text-[color:var(--muted)] transition hover:-translate-y-0.5 hover:text-white"
               >
-                Process
+                How I work
               </Link>
-              <Link href="/contact" className="button-primary">
-                Start a project
+              <Link href="/contact#project-request" className="button-primary">
+                Request project
               </Link>
             </div>
 
@@ -149,11 +149,11 @@ export default function Navbar() {
                     );
                   })}
                   <Link
-                    href="/contact"
+                    href="/contact#project-request"
                     onClick={closeMenu}
                     className="button-primary mt-2"
                   >
-                    Start a project
+                    Request project
                   </Link>
                 </div>
               </div>

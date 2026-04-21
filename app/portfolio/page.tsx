@@ -1,50 +1,63 @@
 import Link from "next/link";
 import CountUpNumber from "@/components/CountUpNumber";
 import ProjectPreview from "@/components/ProjectPreview";
+import { requestServiceOptions } from "@/data/clientRequest";
 import { portfolioProjects } from "@/data/portfolio";
-
-const strengths = [
-  "Stronger hierarchy across long pages",
-  "Cleaner layout systems for repeatable sections",
-  "Balanced motion that adds energy without noise",
-];
-
-const process = [
-  {
-    title: "Study the reference",
-    description:
-      "We look at what works in each live example: pacing, layout rhythm, brand feel, CTA moments, and product/service framing.",
-  },
-  {
-    title: "Translate, not copy",
-    description:
-      "The goal is not to clone any site. It is to borrow the strongest ideas and reshape them into something that fits your brand.",
-  },
-  {
-    title: "Build your version",
-    description:
-      "Those ideas become a cleaner structure, richer visuals, and a more intentional frontend system for your own website.",
-  },
-];
 
 const portfolioStats = [
   {
-    label: "Total links",
+    label: "Live references",
     value: portfolioProjects.length,
     suffix: "+",
-    detail: "A growing wall of live references across different business types.",
+    detail: "A reference wall clients can browse before they request their own build.",
   },
   {
-    label: "Focus sectors",
+    label: "Project tracks",
+    value: requestServiceOptions.length,
+    suffix: "",
+    detail: "Clear lanes from landing pages to larger custom website work.",
+  },
+  {
+    label: "Use cases",
     value: 4,
     suffix: "",
-    detail: "Retail, beauty, branding, and high-conversion landing funnels.",
+    detail: "Business sites, e-commerce, branding pages, and conversion-led funnels.",
+  },
+];
+
+const translationSteps = [
+  {
+    title: "Spot the pattern",
+    description:
+      "Look at what is working in layout, pacing, content hierarchy, and call-to-action placement.",
   },
   {
-    label: "Reference phases",
-    value: process.length,
-    suffix: "",
-    detail: "Study, translate, and rebuild into your own sharper system.",
+    title: "Reframe it for the client",
+    description:
+      "Translate the strongest ideas into a structure that fits the business, audience, and offer instead of copying the reference.",
+  },
+  {
+    title: "Build the sharper version",
+    description:
+      "Turn that direction into a cleaner website or project flow that feels custom, credible, and easier to act on.",
+  },
+];
+
+const proofNotes = [
+  {
+    title: "Useful before the first call",
+    description:
+      "Clients can point to the styles, sections, and pacing they respond to, which makes the project request more concrete.",
+  },
+  {
+    title: "Helpful for scoping",
+    description:
+      "The reference wall shows whether the client is aiming for a simpler launch page, a fuller website, or a more custom experience.",
+  },
+  {
+    title: "Better than placeholder mockups",
+    description:
+      "Live references make the website feel more grounded and professional than generic demo boxes or made-up testimonials.",
   },
 ];
 
@@ -56,14 +69,15 @@ export default function PortfolioPage() {
           <div className="space-y-5">
             <span className="eyebrow">Portfolio</span>
             <h1 className="section-title text-5xl sm:text-6xl lg:text-7xl">
-              Live portfolio references curated from real websites and funnels.
+              Live direction clients can browse before they request their own
+              project.
             </h1>
           </div>
 
           <p className="lead-copy max-w-none">
-            These links now give your website a real showcase library across
-            beauty, fashion, commerce, industrial brands, and high-conversion
-            landing pages.
+            This portfolio now works as proof and context. It helps visitors see
+            the level of polish, range, and structure they can ask for in their
+            own website or custom build.
           </p>
         </div>
       </section>
@@ -131,32 +145,36 @@ export default function PortfolioPage() {
         <div className="grid gap-6 lg:grid-cols-[0.84fr_1.16fr]">
           <div className="surface-card p-6 sm:p-7">
             <p className="text-xs uppercase tracking-[0.26em] text-[var(--teal)]">
-              How I use these references
+              Why this page matters
             </p>
             <h2 className="section-title mt-4 text-4xl">
-              Inspiration is useful only when it becomes your own identity.
+              It helps clients say what they want without struggling to explain
+              it.
             </h2>
             <p className="mt-5 leading-8 text-[color:var(--muted)]">
-              The point of this wall is to show range and direction. From here,
-              I can turn the strongest patterns into a custom visual system for
-              your own site instead of a copied layout.
+              A good portfolio page does more than look nice. It gives future
+              clients enough visual and structural reference to ask for a build
+              with more confidence and less hesitation.
             </p>
           </div>
 
           <div className="warm-panel overflow-hidden rounded-[32px] bg-[#f5ecde] p-8 text-[#10172d] shadow-[0_30px_80px_rgba(5,8,18,0.2)] sm:p-10">
             <p className="text-sm uppercase tracking-[0.28em] text-[#7a674b]">
-              What carries into your redesign
+              What this proof helps with
             </p>
             <div className="mt-6 grid gap-4">
-              {strengths.map((item, index) => (
+              {proofNotes.map((item, index) => (
                 <div
-                  key={item}
+                  key={item.title}
                   className="rounded-[24px] border border-[#dac9af] bg-white/60 px-5 py-5"
                 >
                   <p className="text-xs uppercase tracking-[0.26em] text-[#7a674b]">
                     0{index + 1}
                   </p>
-                  <p className="mt-3 text-xl font-semibold">{item}</p>
+                  <p className="mt-3 text-xl font-semibold">{item.title}</p>
+                  <p className="mt-3 leading-7 text-[#44506b]">
+                    {item.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -166,14 +184,14 @@ export default function PortfolioPage() {
 
       <section className="section-shell section-spacing">
         <div className="mb-10 space-y-4">
-          <span className="eyebrow">Process</span>
+          <span className="eyebrow">How It Translates</span>
           <h2 className="section-title text-4xl md:text-5xl">
-            How I turn references into a better final website.
+            How references become a better final website.
           </h2>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {process.map((item, index) => (
+          {translationSteps.map((item, index) => (
             <div key={item.title} className="surface-card p-6 sm:p-7">
               <p className="text-xs uppercase tracking-[0.26em] text-[var(--teal)]">
                 Phase 0{index + 1}
@@ -193,20 +211,20 @@ export default function PortfolioPage() {
         <div className="surface-card p-8 sm:p-10 lg:p-12">
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
-              <span className="eyebrow">Let&apos;s Build Yours</span>
+              <span className="eyebrow">Request Yours</span>
               <h2 className="section-title mt-5 text-4xl md:text-5xl">
-                Now the portfolio has real proof. Next we can make your pages
-                feel just as sharp.
+                Once the direction feels clear, the next move is to request the
+                project.
               </h2>
               <p className="mt-4 max-w-2xl leading-8 text-[color:var(--muted)]">
-                We can keep adding more live links, or move straight into the
-                next upgrade like a real contact backend, WhatsApp CTA, or more
-                custom project pages.
+                The portfolio now supports a stronger sales flow. A client can
+                browse the references here, then move straight into the project
+                request page with a clearer idea of what they want built.
               </p>
             </div>
 
             <div className="flex flex-col gap-4 sm:flex-row lg:flex-col">
-              <Link href="/contact" className="button-primary">
+              <Link href="/contact#project-request" className="button-primary">
                 Start your project
               </Link>
               <Link href="/services" className="button-secondary">

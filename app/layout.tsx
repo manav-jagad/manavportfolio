@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import CursorAura from "@/components/CursorAura";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import PageProgressBar from "@/components/PageProgressBar";
-import PageTransition from "@/components/PageTransition";
-import SurfaceCardEffects from "@/components/SurfaceCardEffects";
+import AppChrome from "@/components/AppChrome";
 
 export const metadata: Metadata = {
   title: {
@@ -13,13 +8,14 @@ export const metadata: Metadata = {
     template: "%s | Manav Studio",
   },
   description:
-    "Design-forward websites and polished product experiences crafted with strategy, motion, and clean frontend execution.",
+    "Client-focused websites, landing pages, and custom web projects built with stronger messaging, better structure, and clean frontend execution.",
   keywords: [
     "Manav",
-    "web designer",
+    "freelance web developer",
     "frontend developer",
-    "Next.js portfolio",
-    "website renovation",
+    "client project website",
+    "custom website development",
+    "landing page developer",
   ],
 };
 
@@ -31,14 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <PageProgressBar />
-        <CursorAura />
-        <SurfaceCardEffects />
-        <Navbar />
-        <main id="main-content">
-          <PageTransition>{children}</PageTransition>
-        </main>
-        <Footer />
+        <AppChrome>{children}</AppChrome>
       </body>
     </html>
   );

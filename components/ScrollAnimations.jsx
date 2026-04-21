@@ -7,6 +7,7 @@ export function ScrollSection({ children, className = '', animation = 'slide-up-
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
+    const currentSection = sectionRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -16,13 +17,13 @@ export function ScrollSection({ children, className = '', animation = 'slide-up-
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (currentSection) {
+      observer.observe(currentSection);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentSection) {
+        observer.unobserve(currentSection);
       }
     };
   }, []);
@@ -44,6 +45,7 @@ export function ScrollCard({ children, className = '', delay = 0 }) {
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
+    const currentCard = cardRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -53,13 +55,13 @@ export function ScrollCard({ children, className = '', delay = 0 }) {
       { threshold: 0.1 }
     );
 
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
+    if (currentCard) {
+      observer.observe(currentCard);
     }
 
     return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
+      if (currentCard) {
+        observer.unobserve(currentCard);
       }
     };
   }, []);

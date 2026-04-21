@@ -21,7 +21,7 @@ export function ScrollReveal({ children, animation = 'slide-up', delay = 0 }) {
 }
 
 export function ScrollStagger({ children }) {
-  const [ref, isVisible] = useInView();
+  const [ref] = useInView();
 
   return (
     <div ref={ref}>

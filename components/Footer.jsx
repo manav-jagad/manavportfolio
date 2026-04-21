@@ -8,10 +8,10 @@ const navLinks = [
 ];
 
 const serviceHighlights = [
-  "Website renovation",
-  "Landing page systems",
+  "Business websites",
+  "Landing pages",
+  "Custom web projects",
   "Frontend polish",
-  "Product storytelling",
 ];
 
 export default function Footer() {
@@ -28,19 +28,20 @@ export default function Footer() {
                   Manav Studio
                 </p>
                 <h2 className="section-title text-3xl md:text-4xl">
-                  Built to feel sharp, calm, and unforgettable.
+                  Built for businesses that want clearer trust and better project enquiries.
                 </h2>
                 <p className="max-w-xl text-[color:var(--muted)] leading-7">
-                  I design and build websites that look premium, communicate
-                  clearly, and give your visitors a strong reason to stay.
+                  I design and develop websites that make it easier for clients
+                  to understand the offer, trust the brand, and request the
+                  work.
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-3">
                 <span className="tag">Next.js</span>
+                <span className="tag">Project requests</span>
                 <span className="tag">Responsive design</span>
-                <span className="tag">Content structure</span>
-                <span className="tag">Launch polish</span>
+                <span className="tag">Custom frontend</span>
               </div>
             </div>
 
@@ -86,14 +87,18 @@ export default function Footer() {
                   hello@manavstudio.dev
                 </a>
                 <p className="mt-2 text-sm text-[color:var(--muted)]">
-                  Based in India, collaborating remotely worldwide.
+                  Based in India, collaborating remotely on websites and custom
+                  builds worldwide.
                 </p>
               </div>
             </div>
           </div>
 
           <div className="flex flex-col gap-4 px-6 py-5 text-sm text-[color:var(--muted)] sm:flex-row sm:items-center sm:justify-between lg:px-10">
-            <p>&copy; {year} Manav Studio. Designed for clarity, motion, and conversion.</p>
+            <p>
+              &copy; {year} Manav Studio. Designed for project clarity, stronger
+              trust, and better enquiries.
+            </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/services" className="transition hover:-translate-y-0.5 hover:text-white">
                 Services
@@ -101,8 +106,8 @@ export default function Footer() {
               <Link href="/portfolio" className="transition hover:-translate-y-0.5 hover:text-white">
                 Portfolio
               </Link>
-              <Link href="/contact" className="transition hover:-translate-y-0.5 hover:text-white">
-                Contact
+              <Link href="/contact#project-request" className="transition hover:-translate-y-0.5 hover:text-white">
+                Request Project
               </Link>
             </div>
           </div>
